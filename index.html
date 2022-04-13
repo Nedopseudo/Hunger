@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hunger</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<!--Sprite-->
+<svg style="display: none;">
+    <symbol id="facebook" viewBox="0 0 12 21">
+        <path d="M10.6484 12.2339L11.1953 8.64014H7.71875V6.29639C7.71875 5.28076 8.1875 4.34326 9.75 4.34326H11.3516V1.25732C11.3516 1.25732 9.90625 0.983887 8.53906 0.983887C5.6875 0.983887 3.8125 2.7417 3.8125 5.8667V8.64014H0.609375V12.2339H3.8125V20.9839H7.71875V12.2339H10.6484Z" />
+    </symbol>
+
+    <symbol id="twitter" viewBox="0 0 20 18">
+        <path d="M17.9297 4.92139C18.7109 4.33545 19.4141 3.63232 19.9609 2.81201C19.2578 3.12451 18.4375 3.35889 17.6172 3.43701C18.4766 2.9292 19.1016 2.14795 19.4141 1.17139C18.6328 1.64014 17.7344 1.9917 16.8359 2.18701C16.0547 1.3667 15 0.897949 13.8281 0.897949C11.5625 0.897949 9.72656 2.73389 9.72656 4.99951C9.72656 5.31201 9.76562 5.62451 9.84375 5.93701C6.44531 5.7417 3.39844 4.10107 1.36719 1.64014C1.01562 2.22607 0.820312 2.9292 0.820312 3.71045C0.820312 5.1167 1.52344 6.3667 2.65625 7.10889C1.99219 7.06982 1.32812 6.91357 0.78125 6.60107V6.64014C0.78125 8.63232 2.1875 10.2729 4.0625 10.6636C3.75 10.7417 3.35938 10.8198 3.00781 10.8198C2.73438 10.8198 2.5 10.7808 2.22656 10.7417C2.73438 12.3823 4.25781 13.5542 6.05469 13.5933C4.64844 14.687 2.89062 15.3511 0.976562 15.3511C0.625 15.3511 0.3125 15.312 0 15.2729C1.79688 16.4448 3.94531 17.1089 6.28906 17.1089C13.8281 17.1089 17.9297 10.8979 17.9297 5.46826C17.9297 5.27295 17.9297 5.1167 17.9297 4.92139Z" />    
+    </symbol>
+
+    <symbol id="instagram" viewBox="0 0 18 18">
+        <path d="M9 4.4917C6.5 4.4917 4.50781 6.52295 4.50781 8.98389C4.50781 11.4839 6.5 13.4761 9 13.4761C11.4609 13.4761 13.4922 11.4839 13.4922 8.98389C13.4922 6.52295 11.4609 4.4917 9 4.4917ZM9 11.9136C7.39844 11.9136 6.07031 10.6245 6.07031 8.98389C6.07031 7.38232 7.35938 6.09326 9 6.09326C10.6016 6.09326 11.8906 7.38232 11.8906 8.98389C11.8906 10.6245 10.6016 11.9136 9 11.9136ZM14.7031 4.33545C14.7031 3.74951 14.2344 3.28076 13.6484 3.28076C13.0625 3.28076 12.5938 3.74951 12.5938 4.33545C12.5938 4.92139 13.0625 5.39014 13.6484 5.39014C14.2344 5.39014 14.7031 4.92139 14.7031 4.33545ZM17.6719 5.39014C17.5938 3.98389 17.2812 2.73389 16.2656 1.71826C15.25 0.702637 14 0.390137 12.5938 0.312012C11.1484 0.233887 6.8125 0.233887 5.36719 0.312012C3.96094 0.390137 2.75 0.702637 1.69531 1.71826C0.679688 2.73389 0.367188 3.98389 0.289062 5.39014C0.210938 6.83545 0.210938 11.1714 0.289062 12.6167C0.367188 14.0229 0.679688 15.2339 1.69531 16.2886C2.75 17.3042 3.96094 17.6167 5.36719 17.6948C6.8125 17.7729 11.1484 17.7729 12.5938 17.6948C14 17.6167 15.25 17.3042 16.2656 16.2886C17.2812 15.2339 17.5938 14.0229 17.6719 12.6167C17.75 11.1714 17.75 6.83545 17.6719 5.39014ZM15.7969 14.1401C15.5234 14.9214 14.8984 15.5073 14.1562 15.8198C12.9844 16.2886 10.25 16.1714 9 16.1714C7.71094 16.1714 4.97656 16.2886 3.84375 15.8198C3.0625 15.5073 2.47656 14.9214 2.16406 14.1401C1.69531 13.0073 1.8125 10.2729 1.8125 8.98389C1.8125 7.73389 1.69531 4.99951 2.16406 3.82764C2.47656 3.08545 3.0625 2.49951 3.84375 2.18701C4.97656 1.71826 7.71094 1.83545 9 1.83545C10.25 1.83545 12.9844 1.71826 14.1562 2.18701C14.8984 2.46045 15.4844 3.08545 15.7969 3.82764C16.2656 4.99951 16.1484 7.73389 16.1484 8.98389C16.1484 10.2729 16.2656 13.0073 15.7969 14.1401Z" />    
+    </symbol>
+<!-------------------------------------------------------------------------------------------------->
+    <symbol id="geo" viewBox="0 0 91 91">
+        <path d="M66.9,41.8c0-11.3-9.1-20.4-20.4-20.4c-11.3,0-20.4,9.1-20.4,20.4c0,11.3,20.4,32.4,20.4,32.4S66.9,53.1,66.9,41.8z    M37,41.4c0-5.2,4.3-9.5,9.5-9.5c5.2,0,9.5,4.2,9.5,9.5c0,5.2-4.2,9.5-9.5,9.5C41.3,50.9,37,46.6,37,41.4z"/>    
+    </symbol>
+
+    <symbol id="call" viewBox="0 0 459 459">
+        <path d="M91.8,198.9c35.7,71.4,96.9,130.05,168.3,168.3L316.2,311.1c7.649-7.649,17.85-10.199,25.5-5.1
+        c28.05,10.2,58.649,15.3,91.8,15.3c15.3,0,25.5,10.2,25.5,25.5v86.7c0,15.3-10.2,25.5-25.5,25.5C193.8,459,0,265.2,0,25.5
+        C0,10.2,10.2,0,25.5,0h89.25c15.3,0,25.5,10.2,25.5,25.5c0,30.6,5.1,61.2,15.3,91.8c2.55,7.65,0,17.85-5.1,25.5L91.8,198.9z"/>    
+    </symbol>
+
+    <symbol id="mail" viewBox="0 0 64 64">
+        <path d="M0.006,14.328v36.889c0,2.75,2.25,5,5,5h53.988c2.75,0,5-2.25,5-5V14.461L32.099,41.09L0.006,14.328z"/>    
+    </symbol>
+</svg>
+<!--/.Sprite-->
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <a class="nav_item" href="#">HOME</a>
+            <a class="nav_item" href="#">ABOUT</a>
+            <a class="nav_item" href="#">TEAM</a>
+            <a class="nav_item" href="#">BOOKING</a>
+            <a href="index.html">
+                <img class="logo" src="./img/logo/logo.svg" alt="logo">
+            </a>
+            <a class="nav_item" href="#">MENU</a>
+            <a class="nav_item" href="#">GALERIE</a>
+            <a class="nav_item" href="#">EVENTS</a>
+            <a class="nav_item" href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="section--promo">
+
+        <div class="container block block__promo">
+            <div class="time_text">
+                <p class="left">Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM</p>
+            </div>
+            <div class="promo_main">
+
+                <h3 class="RESTAURANT">RESTAURANT</h3>
+                <h1 class="hungry_people">hungry people</h1>
+                <div class="hr-block">
+                    <hr class="hr">
+                </div>
+
+
+
+                <div class="buttons">
+                    <button class="btn btn--primary">BOOK TABLE</button>
+                    <button class="btn btn--secondary">EXPLORE</button>
+                    <div class="ellipse">
+                        <a href="#one" class="link--down"></a>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.promo_main-->
+
+
+            <div class="right">
+                <div class="social">
+                    <a href="https://yandex.ru/search/?clid=2358536&text=twitter&l10n=ru&lr=20571" target="_blank">
+                        <svg class="facebook">                              
+                            <use xlink:href="#facebook"></use>                         
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://yandex.ru/search/?clid=2358536&text=facebook&l10n=ru&lr=20571" target="_blank">
+                        <svg class="twitter">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="social">
+                    <a href="https://yandex.ru/search/?clid=2358536&text=instagram&l10n=ru&lr=20571" target="_blank">
+                        <svg class="instagram">
+                            <use xlink:href="#instagram"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <!--/.right-->
+        </div>
+        <!--/.container block block__promo-->
+    </section>
+
+
+    <div id="one" class="default">
+        <div class="container">
+            <div class="default_block">
+                <div class="about-item about-item--black-text">
+                    <h1 class="title">ABOUT US</h1>
+                    <div class="block-hr">
+                        <div class="hr-block">
+                            <hr class="hr">
+                        </div>
+                    </div>
+                    <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at<br> velit maximus, molestie est a, tempor magna.</p>
+                    <p class="integer">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, asollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis
+                        pharetra. Nulla facilisis semper laoreet.</p>
+                </div>
+                <div class="default_img">
+                    <img src="./img/photo/deafultphoto/fire.png" alt="block three" class="def_photo">
+                    <img src="./img/photo/deafultphoto/yellowsquare.svg" alt="square" class="yellow_square--right">
+                </div>
+
+            </div>
+            <!--/.default_block-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.default-->
+
+    <div class="default bg">
+        <div class="container">
+            <div class="our-block">
+                <span>OUT TEAM</span>
+            </div>
+            <div class="default_block">
+
+                <div class="default_img">
+                    <img src="./img/photo/deafultphoto/cook.png" alt="block four" class="def_photo">
+                    <img src="./img/photo/deafultphoto/yellowsquare.svg" alt="square" class="yellow_square--left ">
+                </div>
+                <div class="about-item">
+                    <h1 class="title">MASTER CHEF</h1>
+                    <div class="hr-block">
+                        <hr class="hr">
+                    </div>
+                    <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at<br> velit maximus, molestie est a, tempor magna.</p>
+                    <p class="integer">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis
+                        pharetra. Nulla facilisis semper laoreet.</p>
+                </div>
+            </div>
+            <!--/.default_block-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.default bg-->
+
+
+
+    <section class="block__form">
+        <div class="container">
+            <div class="book_table">
+                <div class="column">
+                    <h2 class="title">book a table</h2>
+                    <div class="hr-block">
+                        <hr class="hr">
+                    </div>
+
+                    <form class="column_item">
+                        <input class="input" name="name" type="text" placeholder="Name">
+                        <input class="input" name="email" type="text" placeholder="Email">
+                    </form>
+
+                    <form class="column_item">
+                        <input class="input" name="phone" placeholder="Phone">
+                        <select name="people" class="input input--arrow" id="">
+                        <option value="1">People</option>
+                        <option value="2">Animal</option>
+                        <option value="3">3</option>
+                    </select>
+                    </form>
+
+                    <form class="column_item">
+                        <input class="input " name="date" type="text" placeholder="Date (mm/dd)">
+                        <select name="time" id="" class="input input--arrow">
+                        <option value="">Time</option>
+                        <option value="">-</option>
+                        <option value="">-</option>
+                        
+                    </select>
+                    </form>
+
+                    <form class="last">
+                        <button class="btn--third">BOOK NOW</button>
+                    </form>
+
+                </div>
+                <!--/.column-->
+                <div class="default_img">
+                    <img src="./img/photo/deafultphoto/watch.png" alt="" class="def_photo">
+                    <img src="./img/photo/deafultphoto/yellowsquare.svg" alt="" class="yellow_square--right">
+                </div>
+                <!--/.block_table-->
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.block form-->
+
+
+        <div class="time-num-block">
+            <span class="number">Mon - Fri: <b>8PM - 10PM</b>, Sat - Sun: <b>8PM - 3AM</b>, Phone: <b>+40 729 131 637/+40 726 458 782</b></span>
+        </div>
+    </section>
+
+
+    <div class="default bg  ">
+        <div class="container swiper-wrapper">
+
+            <div class="default_block ">
+
+                <div class="default_img">
+                    <img src="./img/photo/deafultphoto/food.png" alt="block six" class="def_photo">
+                    <img src="./img/photo/deafultphoto/yellowsquare.svg" alt="square" class="yellow_square--left ">
+                </div>
+
+                <div class="about-item js_swiper">
+                    <h1 class="title">chocolate pancakes</h1>
+                    <div class="hr-block">
+                        <hr class="hr">
+                    </div>
+                    <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at<br> velit maximus, molestie est a, tempor magna.</p>
+                    <p class="integer">Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis
+                        pharetra. Nulla facilisis semper laoreet.</p>
+                </div>
+            </div>
+
+
+            <!--/.default_block-->
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.default bg-->
+
+
+
+    <section class="block--menu container">
+        <div class="block_up">
+            <h2 class="title title--black ">DELICIOUS MENU</h2>
+            <div class="hr-block">
+                <hr class="hr">
+            </div>
+            <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at<br> velit maximus, molestie est a, tempor magna.</p>
+        </div>
+        <!--/.block_up-->
+        <div class="view">
+
+            <a class="link_item" href="#">SOUPE</a>
+
+            <a class="link_item" href="#">PIZZA</a>
+
+            <a class="link_item" href="#">PASTA</a>
+
+            <a class="link_item" href="#">DESERT</a>
+
+            <a class="link_item" href="#">WINE</a>
+
+            <a class="link_item" href="#">BEER</a>
+
+            <a class="link_item " href="#">DRINKS</a>
+
+        </div>
+        <!--/.view-->
+
+        <div class="dish__block">
+
+            <div class="dish">
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+            </div>
+            <div class="dish">
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+            </div>
+            <div class="dish">
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+                <h4 class="name_item">PIZZA QUATRO STAGIONI . . . . 55,68 USD</h4>
+                <p class="crip">Integer ullamcorper neque eu purus euismod</p>
+            </div>
+        </div>
+    </section>
+    <!--/.block--menu container-->
+
+    <div class="private">
+        <div class="container">
+            <div class="our-block">
+                <span>PRIVATE EVENTS</span>
+            </div>
+            <div class="two_photo_block">
+                <div class="two-photo">
+                    <img src="./img/photo/deafultphoto/ringleft.png" alt="block seven ring" class="pht">
+                    <img src="./img/photo/deafultphoto/tableright.png" alt="block seven table" class="pht">
+
+                </div>
+            </div>
+            <!--/.two_photo_block-->
+            <div class="time-num-block ">
+                <span class="num--white">Mon - Fri: <b>8PM - 10PM</b>, Sat - Sun: <b>8PM - 3AM</b>, Phone: <b>+40 729 131 637/+40 726 458 782</b></span>
+            </div>
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.private-->
+
+
+    <div class="block_photo">
+        <img class="line_photo" src="./img/photo/groupphoto/one.png">
+        <img class="line_photo" src="./img/photo/groupphoto/two.png">
+        <img class="line_photo" src="./img/photo/groupphoto/three.png">
+        <img class="line_photo" src="./img/photo/groupphoto/four.png">
+    </div>
+
+
+
+    <section class="block_contact_info">
+        <div class="contact_info">
+            <div class="block_up">
+                <h4 class="title title--black">CONTACT</h4>
+                <div class="hr-block">
+                    <hr class="hr">
+                </div>
+                <p class="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at<br> velit maximus, molestie est a, tempor magna.</p>
+            </div>
+            <!--/.block_up-->
+            <div class="block_form">
+                <div class="one_block_form">
+                    <form class="form_one" action="">
+                        <input class="input input--twoblock" name="name" type="text" placeholder="Name">
+                        <input class="input input--twoblock" name="email" type="text" placeholder="Email">
+                        <input class="input input--twoblock" name="phone" type="text" placeholder="Phone">
+                    </form>
+                    <form class="block_textarea" action="">
+                        <textarea class="textarea" name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                    </form>
+                    <div class="two_block_form">
+
+                        <div class="under">
+                            <svg class="geo">          
+                                <use xlink:href="#geo"></use>           
+                            </svg>
+                            <a href="" class="contacts">5th London Boulevard, U.K.</a>
+                        </div>
+
+                        <div class="under">
+                            <svg class="call">          
+                                <use xlink:href="#call"></use>           
+                            </svg>
+                            <a href="#" class="contacts">+40 729 131 637/+40 726 458 782</a>
+
+                        </div>
+
+                        <div class="under">
+                            <svg class="mail">          
+                                <use xlink:href="#mail"></use>           
+                            </svg>
+                            <a href="https://mail.ru/?from=logout" target="_blank" class="contacts">office@mindblister.com</a>
+                        </div>
+
+                        <button class="btn--third">BOOK NOW</button>
+                    </div>
+                    <!--/.two_block_form-->
+                </div>
+                <!--/.one_block_form-->
+            </div>
+            <!--/.block_form-->
+        </div>
+        <!--/.contact_info-->
+    </section>
+    <!--/.block_contact_info-->
+
+
+
+    <footer class="footer">
+        <div class="block-map">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14..." frameborder="0" style="border:0;" allowfullscreen="1" aria-hidden="false" tabindex="0"></iframe></div>
+
+        <div class="footer_block">
+            <div class="company">
+                <p>© Copyright <span class="mind">Mindblister</span> 2019</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="libs/swiper/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
+
+
+</body>
+
+</html>
